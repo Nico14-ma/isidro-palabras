@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from "react";
 
 const palabras = [
@@ -11,26 +10,6 @@ const palabras = [
     palabra: "PAPÁ",
     imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Father_icon.svg/512px-Father_icon.svg.png",
     audio: "https://www.soundjay.com/human/sounds/papa-1.mp3"
-  },
-  {
-    palabra: "GATO",
-    imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Cat_pictogram.svg/512px-Cat_pictogram.svg.png",
-    audio: "https://www.soundjay.com/animal/cat-meow-1.mp3"
-  },
-  {
-    palabra: "PERRO",
-    imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Dog_icon.svg/512px-Dog_icon.svg.png",
-    audio: "https://www.soundjay.com/animal/dog-bark-1.mp3"
-  },
-  {
-    palabra: "BARCO",
-    imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sailboat_icon.svg/512px-Sailboat_icon.svg.png",
-    audio: "https://www.soundjay.com/nature/ocean-wave-1.mp3"
-  },
-  {
-    palabra: "NENE",
-    imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Child_icon.svg/512px-Child_icon.svg.png",
-    audio: "https://www.soundjay.com/human/baby-crying-01.mp3"
   }
 ];
 
@@ -89,11 +68,7 @@ export default function TracingPalabrasApp() {
   return (
     <div className="flex flex-col items-center gap-4 p-4">
       <h1 className="text-2xl font-bold">Aprender Palabras</h1>
-      <img
-        src={currentWord.imagen}
-        alt={currentWord.palabra}
-        className="w-32 h-32 object-contain"
-      />
+      <img src={currentWord.imagen} alt={currentWord.palabra} className="w-32 h-32 object-contain" />
       <canvas
         ref={canvasRef}
         width={300}
@@ -108,18 +83,8 @@ export default function TracingPalabrasApp() {
         onTouchEnd={stopDrawing}
       />
       <div className="flex gap-4">
-        <button
-          onClick={playAudio}
-          className="px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-600"
-        >
-          Escuchar
-        </button>
-        <button
-          onClick={nextWord}
-          className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600"
-        >
-          Siguiente palabra
-        </button>
+        <button onClick={playAudio} className="px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-600">Escuchar</button>
+        <button onClick={nextWord} className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600">Siguiente palabra</button>
       </div>
     </div>
   );
